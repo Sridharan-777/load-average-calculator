@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load Average Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Load Average Calculator</h1>
+    <p>Enter server load samples separated by commas.</p>
+
+    <form id="load-form">
+      <label for="loads">Load samples</label>
+      <input id="loads" placeholder="0.5, 1.2, 2.1" required>
+
+      <label for="cores">Number of CPU cores</label>
+      <input id="cores" type="number" min="1" value="4" required>
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    <p id="error" class="error" role="alert"></p>
+    <section id="result" class="result" hidden>
+      <h2>Result</h2>
+      <div class="grid">
+        <p>Average <strong id="average"></strong></p>
+        <p>Minimum <strong id="minimum"></strong></p>
+        <p>Maximum <strong id="maximum"></strong></p>
+        <p>Utilization <strong id="utilization"></strong></p>
+      </div>
+      <p>Load status: <strong id="status"></strong></p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
