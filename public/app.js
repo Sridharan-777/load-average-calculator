@@ -7,8 +7,9 @@ form.addEventListener("submit", async (event) => {
   errorMessage.textContent = "";
   result.hidden = true;
 
-  const loads = document.querySelector("#loads").value
-    .split(",")
+  const loads = document
+    .querySelector("#loads")
+    .value.split(",")
     .map((value) => Number(value.trim()));
   const cpuCores = Number(document.querySelector("#cores").value);
 
@@ -28,7 +29,7 @@ form.addEventListener("submit", async (event) => {
     document.querySelector("#status").textContent = data.status;
     result.hidden = false;
   } catch (error) {
-    errorMessage.textContent = error.message || "Unable to calculate the load average.";
+    errorMessage.textContent =
+      error.message || "Unable to calculate the load average.";
   }
 });
-
